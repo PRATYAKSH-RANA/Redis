@@ -1,13 +1,58 @@
-//1. Code
-import java.util.HashMap;
-import java.util.Map;
 
-public class miniRedis{
-    public static void main(String[] args){
-        Map<String,String> database = new HashMap<>(); 
-        database.put("session:101","Honey" );
-        String value = database.get("session:101");
-        System.out.println("value is "+value);
-    }
-}
-//2
+# Mini Redis in Java
+
+A lightweight, Redis-inspired in-memory key-value store built
+from scratch using Java 25.
+
+## Features
+
+- Key-value operations: SET, GET, DEL, EXISTS
+- TTL-based key expiration
+- TCP client-server communication
+- Concurrent client handling with Java virtual threads
+- Snapshot persistence to disk
+- Manual and scheduled snapshot saving
+
+## Tech Stack
+
+- Java 25
+- TCP sockets
+- ConcurrentHashMap
+- Java concurrency utilities
+- File I/O and Base64 encoding
+
+## Run Locally
+
+Compile the source files:
+
+```bash
+javac MiniRedis.java RedisServer.java RedisClient.java
+```
+
+Start the server:
+
+```bash
+java RedisServer
+```
+
+In another terminal, start the client:
+
+```bash
+java RedisClient
+```
+
+## Example Commands
+
+```text
+SET language Java
+GET language
+SET username Diksha EX 60
+TTL username
+SAVE
+```
+
+## Current Limitations
+
+This is an educational project inspired by Redis.
+It uses a simplified line-based TCP protocol and is not
+fully compatible with standard Redis clients.
