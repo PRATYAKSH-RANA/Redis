@@ -1,0 +1,13 @@
+//1. Code
+import java.util.HashMap;
+import java.util.Map;
+
+public class miniRedis{
+    public static void main(String[] args){
+        Map<String,String> database = new HashMap<>(); 
+        database.put("session:101","Honey" );
+        String value = database.get("session:101");
+        System.out.println("value is "+value);
+    }
+}
+//2
